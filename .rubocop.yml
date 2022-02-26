@@ -1,0 +1,37 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+ALLCops:
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'node_modules/**/*'
+
+# 日本語でのコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# クラスでのコメント必須を無視
+Style/Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 文字リテラルのイミュータブル宣言を無視
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# メソッドの行数を20行までにする
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
