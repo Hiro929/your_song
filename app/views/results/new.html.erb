@@ -1,0 +1,21 @@
+<div class="cover-container d-flex mx-auto flex-column">
+  <div class="camera">
+    <video id="video" width="400" height="400" autoplay="1" playsinline></video>
+  </div>
+  <div class="btn">  
+    <button class="btn-2" id="analysis">診断する</button>
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById("video")
+  navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: false,
+  }).then(stream => {
+    video.srcObject = stream;
+    video.play()
+  }).catch(e => {
+    console.log(e)
+  })
+</script>
