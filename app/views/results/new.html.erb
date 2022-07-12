@@ -1,13 +1,24 @@
 <div class="cover-container d-flex mx-auto flex-column">
   <div class="camera">
-    <video id="video" width="400" height="400" autoplay="1" playsinline></video>
+    <video id="video" width="400" height="300" autoplay="1" playsinline></video>
+    <canvas id="canvas" width="400" height="300"></canvas>
   </div>
   <div class="btn">  
-    <button class="btn-2" id="analysis">診断する</button>
+    <button class="button-2" id="analysis">診断する</button>
+  </div>
+  <div class="emotion">
+    <p id="result"></p>
+  </div>
+  <div class="btn-2">
+    <button class="button-2" id="reload">撮り直す</button>
   </div>
 </div>
 
 <script>
+  $('#canvas').hide();
+  $('#reload').hide();
+
+  // カメラの起動
   const video = document.getElementById("video")
   navigator.mediaDevices.getUserMedia({
     video: true,
@@ -17,5 +28,40 @@
     video.play()
   }).catch(e => {
     console.log(e)
+  })
+
+  const analysis = document.getElementById("analysis")
+
+  analysis.addEventListener('click', () => { 
+    $('#video').hide();
+    $('#canvas').show();
+
+    var canvas = document.getElementById("canvas");
+    canvas.getContext("2d").drawImage(video, 0, 0, 400, 300)
+
+    // canvas上の画像をbase64に変換
+    const base64 = canvas.toDataURL('image/jpeg');
+    // base64変換したデータのプレフィクスを削除
+    const photo = base64.replace(/^data:\w+\/\w+;base64,/, '');
+  
+    $.ajax({
+      url: '/results/analysis',
+      type: 'POST',
+      data: {image: photo},
+      success: function(data){
+        $('#result').append(data.emotion);
+        $('#analysis').hide();
+        $('#reload').show();
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.log("失敗")
+      }
+    });
+  })
+
+  const reload = document.getElementById("reload")
+
+  reload.addEventListener('click', () => {
+    location.reload();
   })
 </script>

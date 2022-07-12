@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :songs, only: %i[index]
   resources :results, only: %i[new create]
+  post 'results/analysis', to: 'results#analysis'
 end
