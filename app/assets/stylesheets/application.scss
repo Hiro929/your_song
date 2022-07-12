@@ -101,7 +101,7 @@ body:before {
     margin-top: 20px;
 }
 
-.btn-1 {
+.button {
     font-size: 14px;
     font-weight: bold;
     color: #fff;
@@ -112,7 +112,7 @@ body:before {
     padding: 15px 30px;
 }
 
-.btn-1:hover {
+.button:hover {
     background:  rgba(255, 255, 255, 0.8);
     color: #000;
     border: 2px solid #000;
@@ -149,8 +149,21 @@ footer {
     text-align: center;
 }
 
-/* ボタン */
+.emotion {
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff;
+    text-shadow: 3px 3px 3px #000;
+    margin-top: 30px;
+    text-align: center;
+}
+
 .btn-2 {
+    text-align: center;
+}
+
+/* ボタン */
+.button-2 {
     font-size: 14px;
     font-weight: bold;
     color: #fff;
@@ -159,9 +172,10 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     max-width: 80%;
     padding: 15px 30px;
+    margin-top: 30px;
 }
 
-.btn-2:hover {
+.button-2:hover {
     background:  rgba(255, 255, 255, 0.8);
     color: #000;
     border: 2px solid #000;
