@@ -181,6 +181,70 @@ footer {
     border: 2px solid #000;
 }
 
+// song_new.html.erb
+.search, .result {
+    color: #fff;
+}
+
+.result {
+    margin-top: 50px;
+}
+
+.album {
+    margin-top: 1.5rem;
+}
+
+.album_image {
+    margin: 20px 0px;
+}
+
+.row {
+    padding: 0 7rem;
+}
+
+.track {
+    font-size: 20px;
+    display: flex;
+    padding-left: 50px;
+}
+
+.track p {
+    margin-top: 3px;
+}
+
+.form {
+    margin: 0 0 0 auto;
+}
+
+// song_search.html.erb
+.result2 {
+    color: #fff;
+    margin-top: 50px;
+}
+
+.album_info {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.artist {
+    font-size: 14px !important;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #242424d3 !important;
+    padding: 1.5rem 1rem;
+}
+
 /* スマホ対応 */
 @media (max-width: 1000px) {
     body:before {

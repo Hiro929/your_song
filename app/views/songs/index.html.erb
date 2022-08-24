@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="song">
+    <% if @songs.present? %>
+      <% @songs.each do |song| %>
+        <div class="d-flex p-2 bd-highlight">
+          <p><%= song.title %></p>
+          <img src="<%= "#{song.album_image}" %>" class="d-block mx-auto" width="50" height="50">
+        </div>
+      <% end %>
+      <% end %>
+  </div>
+</div>

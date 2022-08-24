@@ -1,8 +1,18 @@
 class ResultsController < ApplicationController
-  
-  def new; end
 
-  def create; end
+  def show
+    @result = Result.find(params[:uuid])
+  end
+
+  def new
+    @result = Result.new
+  end
+
+  def create
+    @result = Result.create(result_params)
+    @result.save
+    render json: { url: result_url(@result.uuid) }
+  end
 
   def analysis
     credentials = Aws::Credentials.new(
@@ -23,42 +33,57 @@ class ResultsController < ApplicationController
     response.face_details.each do |face_detail|
       @emotion = if face_detail.emotions[0].type == 'HAPPY'
                    { 
-                     emotion: "あなたはとてもハッピーです(^o^)" 
+                     body: "あなたはとてもハッピーです(^o^)" ,
+                     emotion: "HAPPY"
                    }
-                  elsif face_detail.emotions[0].type == 'SAD'
-                    {
-                      emotion: "あなたは悲しんでいます(>_<)"
-                    }
-                  elsif face_detail.emotions[0].type == 'ANGRY'
-                    {
-                      emotion: "あなたは怒っています(`A´)"
-                    }
-                  elsif face_detail.emotions[0].type == 'CONFUSED'
-                    {
-                      emotion: "あなたは困惑しています(´･ω･`)?"
-                    }
-                  elsif face_detail.emotions[0].type == 'DISGUSTED'
-                    {
-                      emotion: "あなたは嫌悪感を抱いています(´･д･`)ﾔﾀﾞ"
-                    }
-                  elsif face_detail.emotions[0].type == 'SURPRISED'
-                    {
-                      emotion: "あなたは驚いています（ﾟﾛﾟ）"
-                    }
-                  elsif face_detail.emotions[0].type == 'CALM'
-                    {
-                      emotion: "あなたは穏やかです(*´∀`*)"
-                    }
-                  elsif face_detail.emotions[0].type == 'FEAR'
-                    {
-                      emotion: "あなたは恐れています（；ﾟДﾟ）"
-                    }
-                  else
-                    {
-                      emotion: "あなたの感情は無です( ˙-˙ )"
-                    }
-                  end                  
+                 elsif face_detail.emotions[0].type == 'SAD'
+                   {
+                     body: "あなたは悲しんでいます(>_<)",
+                     emotion: "SAD"
+                   }
+                 elsif face_detail.emotions[0].type == 'ANGRY'
+                   {
+                     body: "あなたは怒っています(`A´)",
+                     emotion: "ANGRY"
+                   }
+                 elsif face_detail.emotions[0].type == 'CONFUSED'
+                   {
+                     body: "あなたは困惑しています(´･ω･`)?",
+                     emotion: "CONFUSED"
+                   }
+                 elsif face_detail.emotions[0].type == 'DISGUSTED'
+                   {
+                     body: "あなたは嫌悪感を抱いています(´･д･`)ﾔﾀﾞ",
+                     emotion: "DISGUSTED"
+                   }
+                 elsif face_detail.emotions[0].type == 'SURPRISED'
+                   {
+                     body: "あなたは驚いています（ﾟﾛﾟ）",
+                     emotion: "SURPRISED"
+                   }
+                 elsif face_detail.emotions[0].type == 'CALM'
+                   {
+                     body: "あなたは穏やかです(*´∀`*)",
+                     emotion: "CALM"
+                   }
+                 elsif face_detail.emotions[0].type == 'FEAR'
+                   {
+                     body: "あなたは恐れています（；ﾟДﾟ）",
+                     emotion: "FEAR"
+                   }
+                 else
+                   {
+                     body: "あなたの感情は無です( ˙-˙ )",
+                     emotion: "UNKNOWN"
+                   }
+                 end                  
       render json: @emotion
     end
+  end
+
+  private
+
+  def result_params
+    params.require(:result).permit(:image, :emotion)
   end
 end
