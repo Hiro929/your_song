@@ -1,12 +1,24 @@
-<div class="container">
-  <div class="song">
+<div class="container index">
+  <div class="index2">
+    <h3 class="">登録曲一覧</h3>
+    <%= link_to "登録しにいく", new_song_path, class: "link" %>
+  </div>
+
+  <div class="card2 index">
     <% if @songs.present? %>
       <% @songs.each do |song| %>
-        <div class="d-flex p-2 bd-highlight">
+        <div class="song">
           <p><%= song.title %></p>
-          <img src="<%= "#{song.album_image}" %>" class="d-block mx-auto" width="50" height="50">
+          <%= link_to "#{song.spotify_url}", class: "spotify" do %>
+            <i class="fa-brands fa-spotify" style = "color: green"></i>
+          <% end %>
+          <div class="img-pre">
+            <p><%= song.artist %></p>
+            <img src="<%= "#{song.album_image}" %>", class="image" width="54" height="54">
+            <audio controls src="<%= "#{song.preview_url}" %>" style="width: 400px;"></audio>
+          </div>
         </div>
       <% end %>
-      <% end %>
+    <% end %>
   </div>
 </div>

@@ -68,3 +68,5 @@ gem 'aws-sdk-rekognition'
 gem 'rspotify'
 # 環境変数の管理
 gem 'dotenv-rails'
+# Font
+gem 'font-awesome-sass'

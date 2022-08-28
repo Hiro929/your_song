@@ -16,8 +16,7 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
-      flash[:notice] = "#{@song.title}を登録しました！"
-      redirect_to new_song_path
+      redirect_to songs_path, success: "#{@song.title}を登録しました！"
     else
       flash.now[:alert] = "すでに登録されているか、正常に登録されませんでした。"
       render :new

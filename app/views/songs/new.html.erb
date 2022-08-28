@@ -4,22 +4,25 @@
       <%= f.text_field :album, placeholder: "アルバム名", value: @search_params %>
       <%= f.submit "検索" %>
     <% end %>
+    <%= link_to "登録曲一覧", songs_path, class: "link" %>
   </div>
 
   <div class="result">
     <h3>アルバム一覧</h3>
-    <% if @albums.present? %>
-      <% @albums.each do |album| %>
-        <%= album.name %>
-      <% end %>
+    <div>
+      <% if @albums.present? %>
+        <% @albums.each do |album| %>
+          <%= album.name %>
+        <% end %>
+    </div>
       <% if @album.present? %><br>
         <div class="card mb-4 shadow-sm album">
           <div class="album_image">
             <img src="<%= @album.images[0]["url"] %>", class="d-block mx-auto" width="350" height="350"><br>
           </div>
-          <div class="row">
+          <div class="track">
             <% @album.tracks.each do |track| %>
-              <div class="track">
+              <div class="row">
                 <p><%= track.name %></p>
                 <div class="form">
                   <%= form_with model: @song, local: true do |f| %>
