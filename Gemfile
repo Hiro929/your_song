@@ -64,3 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # aws
 gem 'aws-sdk-rekognition'
+# spotify
+gem 'rspotify'
+# 環境変数の管理
+gem 'dotenv-rails'
+# Font
+gem 'font-awesome-sass'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_21_170743) do
+ActiveRecord::Schema.define(version: 2022_08_20_184124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2022_04_21_170743) do
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "acousticness", null: false
+    t.float "danceability", null: false
+    t.float "energy", null: false
+    t.float "tempo", null: false
+    t.float "valence", null: false
+    t.string "preview_url", null: false
+    t.string "spotify_url", null: false
+    t.string "album_image", null: false
   end
 
   add_foreign_key "results", "songs"

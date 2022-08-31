@@ -1,0 +1,49 @@
+<div class="cover-container d-flex mx-auto flex-column">
+  <div class="search text-center">
+    <%= form_with url: new_song_path, method: :get, local: true do |f| %>
+      <%= f.text_field :album, placeholder: "アルバム名", value: @search_params %>
+      <%= f.submit "検索" %>
+    <% end %>
+    <%= link_to "登録曲一覧", songs_path, class: "link" %>
+  </div>
+
+  <div class="result">
+    <h3>アルバム一覧</h3>
+    <div>
+      <% if @albums.present? %>
+        <% @albums.each do |album| %>
+          <%= album.name %>
+        <% end %>
+    </div>
+      <% if @album.present? %><br>
+        <div class="card mb-4 shadow-sm album">
+          <div class="album_image">
+            <img src="<%= @album.images[0]["url"] %>", class="d-block mx-auto" width="350" height="350"><br>
+          </div>
+          <div class="track">
+            <% @album.tracks.each do |track| %>
+              <div class="row">
+                <p><%= track.name %></p>
+                <div class="form">
+                  <%= form_with model: @song, local: true do |f| %>
+                    <%= f.hidden_field :artist, value: track.artists[0].name %>
+                    <%= f.hidden_field :album_image, value: @album.images[0]["url"] %>
+                    <%= f.hidden_field :title, value: track.name %>        
+                    <%= f.hidden_field :acousticness, value: track.audio_features.acousticness %>       
+                    <%= f.hidden_field :danceability, value: track.audio_features.danceability %>       
+                    <%= f.hidden_field :energy, value: track.audio_features.energy %>       
+                    <%= f.hidden_field :tempo, value: track.audio_features.tempo %>
+                    <%= f.hidden_field :valence, value: track.audio_features.valence %>
+                    <%= f.hidden_field :preview_url, value: track.preview_url %>
+                    <%= f.hidden_field :spotify_url, value: track.external_urls["spotify"] %>
+                    <%= f.submit "登録" %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>   
+    <% end %>
+  </div>
+</div>

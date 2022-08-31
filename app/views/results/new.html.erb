@@ -11,12 +11,18 @@
   </div>
   <div class="btn-2">
     <button class="button-2" id="reload">撮り直す</button>
+    <%= form_with model: @result, local: true do |f| %>
+      <%= f.hidden_field :image, id: "photo" %>
+      <%= f.hidden_field :emotion, id: "emotion" %>
+      <%= f.submit  "判定結果", class: "button-2", id: "song" %>
+    <% end %>
   </div>
 </div>
 
 <script>
   $('#canvas').hide();
   $('#reload').hide();
+  $('#song').hide();
 
   // カメラの起動
   const video = document.getElementById("video")
@@ -43,15 +49,18 @@
     const base64 = canvas.toDataURL('image/jpeg');
     // base64変換したデータのプレフィクスを削除
     const photo = base64.replace(/^data:\w+\/\w+;base64,/, '');
+    document.getElementById("photo").value = photo;
   
     $.ajax({
       url: '/results/analysis',
       type: 'POST',
       data: {image: photo},
       success: function(data){
-        $('#result').append(data.emotion);
+        $('#result').append(data.body);
         $('#analysis').hide();
         $('#reload').show();
+        $('#song').show();
+        document.getElementById("emotion").value = data.emotion;
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
         console.log("失敗")
