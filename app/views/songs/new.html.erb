@@ -23,7 +23,9 @@
           <div class="track">
             <% @album.tracks.each do |track| %>
               <div class="row">
-                <p><%= track.name %></p>
+                <div class="track_name">
+                  <p><%= track.name %></p>
+                </div>
                 <div class="form">
                   <%= form_with model: @song, local: true do |f| %>
                     <%= f.hidden_field :artist, value: track.artists[0].name %>

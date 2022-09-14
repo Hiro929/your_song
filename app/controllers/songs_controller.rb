@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def index
-    @songs = Song.all
+    @songs = Song.all.includes(:result)
   end
 
   def new

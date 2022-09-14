@@ -1,21 +1,24 @@
 <div class="cover-container d-flex mx-auto flex-column">
-  <div class="camera">
-    <video id="video" width="400" height="300" autoplay="1" playsinline></video>
-    <canvas id="canvas" width="400" height="300"></canvas>
-  </div>
-  <div class="btn">  
-    <button class="button-2" id="analysis">診断する</button>
-  </div>
-  <div class="emotion">
-    <p id="result"></p>
-  </div>
-  <div class="btn-2">
-    <button class="button-2" id="reload">撮り直す</button>
-    <%= form_with model: @result, local: true do |f| %>
-      <%= f.hidden_field :image, id: "photo" %>
-      <%= f.hidden_field :emotion, id: "emotion" %>
-      <%= f.submit  "判定結果", class: "button-2", id: "song" %>
-    <% end %>
+  <div class="container text-center">
+    <div class="camera">
+      <video id="video" width="400" height="300" autoplay="1" playsinline></video>
+      <canvas id="canvas" width="400" height="300"></canvas>
+    </div>
+    <div class="analysis-btn">  
+      <button class="button-2" id="analysis">診断する</button>
+    </div>
+    <div class="emotion">
+      <p id="result"></p>
+    </div>
+    <div class="btn-2">
+      <button class="button-2" id="reload">撮り直す</button>
+      <%= form_with model: @result, local: true do |f| %>
+        <%= f.hidden_field :image, id: "photo" %>
+        <%= f.hidden_field :emotion, id: "emotion" %>
+        <%= f.hidden_field :song_id, id: "song_id" %>
+        <%= f.submit  "判定結果", class: "button-2", id: "song" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -61,9 +64,12 @@
         $('#reload').show();
         $('#song').show();
         document.getElementById("emotion").value = data.emotion;
+        document.getElementById("song_id").value = data.song_id;
       },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        console.log("失敗")
+      error: function() {
+        $('#result').append("分析失敗しました(>_<)");
+        $('#reload').show();
+        $('#analysis').hide();
       }
     });
   })

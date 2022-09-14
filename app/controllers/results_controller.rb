@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
 
   def show
-    @result = Result.find(params[:uuid])
+    @result = Result.find(params[:id]) 
   end
 
   def new
@@ -9,9 +9,10 @@ class ResultsController < ApplicationController
   end
 
   def create
-    @result = Result.create(result_params)
-    @result.save
-    render json: { url: result_url(@result.uuid) }
+    @result = Result.new(result_params)
+    if @result.save
+      redirect_to result_path(@result.id)
+    end
   end
 
   def analysis
@@ -30,60 +31,105 @@ class ResultsController < ApplicationController
     # 分析結果の取得
     response = client.detect_faces attrs
 
-    response.face_details.each do |face_detail|
-      @emotion = if face_detail.emotions[0].type == 'HAPPY'
-                   { 
-                     body: "あなたはとてもハッピーです(^o^)" ,
-                     emotion: "HAPPY"
-                   }
-                 elsif face_detail.emotions[0].type == 'SAD'
-                   {
-                     body: "あなたは悲しんでいます(>_<)",
-                     emotion: "SAD"
-                   }
-                 elsif face_detail.emotions[0].type == 'ANGRY'
-                   {
-                     body: "あなたは怒っています(`A´)",
-                     emotion: "ANGRY"
-                   }
-                 elsif face_detail.emotions[0].type == 'CONFUSED'
-                   {
-                     body: "あなたは困惑しています(´･ω･`)?",
-                     emotion: "CONFUSED"
-                   }
-                 elsif face_detail.emotions[0].type == 'DISGUSTED'
-                   {
-                     body: "あなたは嫌悪感を抱いています(´･д･`)ﾔﾀﾞ",
-                     emotion: "DISGUSTED"
-                   }
-                 elsif face_detail.emotions[0].type == 'SURPRISED'
-                   {
-                     body: "あなたは驚いています（ﾟﾛﾟ）",
-                     emotion: "SURPRISED"
-                   }
-                 elsif face_detail.emotions[0].type == 'CALM'
-                   {
-                     body: "あなたは穏やかです(*´∀`*)",
-                     emotion: "CALM"
-                   }
-                 elsif face_detail.emotions[0].type == 'FEAR'
-                   {
-                     body: "あなたは恐れています（；ﾟДﾟ）",
-                     emotion: "FEAR"
-                   }
-                 else
-                   {
-                     body: "あなたの感情は無です( ˙-˙ )",
-                     emotion: "UNKNOWN"
-                   }
-                 end                  
-      render json: @emotion
+    if response.face_details == []
+      render json: {
+        body: "分析失敗しました(>_<)"
+      }
+    else
+      response.face_details.each do |face_detail|
+        @emotion = if face_detail.emotions[0].type == 'HAPPY'
+                     @songs = Song.where(
+                       'acousticness <= ? and danceability >= ? or valence >= ?',
+                       0.0038, 0.4, 0.7
+                     )
+                     @song = @songs.sample
+                     { 
+                       body: "あなたはとてもハッピーです(^o^)" ,
+                       emotion: "HAPPY",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'SAD'
+                     @songs = Song.where(
+                       'valence > ? or acousticness >= ? or danceability <= ?',
+                       0.5, 0.0039,0.39
+                     )
+                     @song = @songs.sample
+                     {
+                       body: "あなたは悲しんでいます(>_<)",
+                       emotion: "SAD",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'ANGRY'
+                     @songs = Song.where(
+                       'tempo >= ? and tempo <= ? or acousticness >= ?', 
+                       90, 150, 0.0039
+                     )
+                     @song = @songs.sample
+                     {
+                       body: "あなたは怒っています(`A´)",
+                       emotion: "ANGRY",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'CONFUSED'
+                     @songs = Song.where('acousticness >= ?', 0.0039)
+                     @song = @songs.sample
+                     {
+                       body: "あなたは困惑しています(´･ω･`)?",
+                       emotion: "CONFUSED",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'DISGUSTED'
+                     @songs = Song.where('acousticness <= ? or valence >= ?', 0.0038, 0.6)
+                     @song = @songs.sample
+                     {
+                       body: "あなたは嫌悪感を抱いています(´･д･`)ﾔﾀﾞ",
+                       emotion: "DISGUSTED",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'SURPRISED'
+                     @songs = Song.where('tempo >= ? and tempo <= ? or acousticness >= ?', 90, 150, 0.0039)
+                     @song = @songs.sample
+                     {
+                       body: "あなたは驚いています（ﾟﾛﾟ）",
+                       emotion: "SURPRISED",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'CALM'
+                     @songs = Song.where('acousticness <= ? or energy >= ?', 0.0039, 0.85)
+                     @song = @songs.sample
+                     {
+                       body: "あなたは穏やかです(*´∀`*)",
+                       emotion: "CALM",
+                       song_id: @song.id
+                     }
+                   elsif face_detail.emotions[0].type == 'FEAR'
+                     @songs = Song.where('acousticness <= ? or valence >= ?', 0.0038, 0.6)
+                     @song = @songs.sample
+                     {
+                       body: "あなたは恐れています（；ﾟДﾟ）",
+                       emotion: "FEAR",
+                       song_id: @song.id
+                     }
+                   else
+                     @songs = Song.where(
+                       'valence > ? or acousticness >= ? or danceability <= ?',
+                       0.5, 0.0039,0.39
+                     )
+                     @song = @songs.sample
+                     {
+                       body: "あなたの感情は無です( ˙-˙ )",
+                       emotion: "UNKNOWN",
+                       song_id: @song.id
+                     }
+                   end                  
+        render json: @emotion
+      end
     end
   end
 
   private
 
   def result_params
-    params.require(:result).permit(:image, :emotion)
+    params.require(:result).permit(:image, :emotion, :song_id)
   end
 end

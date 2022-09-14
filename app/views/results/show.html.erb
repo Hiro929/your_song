@@ -1,3 +1,29 @@
 <div class="cover-container d-flex mx-auto flex-column">
-  <p><%= @result.emotion %></p>
+  <div class="container">
+    <div class="result_emotion">
+      <img src="<%= "data:image/png;base64,#{@result.image}" %>" width="100" height="80">
+      <p>あなたの感情 : <%= @result.emotion %></p>
+    </div>
+
+    <div class="result_song">
+      <h4>↓そんなあなたにおすすめの曲がこちらです↓</h4>
+      <div class="card">
+        <img src="<%= "#{@result.song.album_image}" %>", class="d-block mx-auto" width="150" height="150">
+        <div class="song_info">
+          <p><%= @result.song.title %></p>
+          <%= link_to "#{@result.song.spotify_url}", class: "spotify" do %>
+            <i class="fa-brands fa-spotify" style = "color: green"></i>
+          <% end %>
+        </div>
+          <audio controls src="<%= "#{@result.song.preview_url}" %>" style="width: 400px;"></audio>
+      </div>
+    </div>
+
+    <div class="btn-3">
+      <%= link_to "#", class: "twitter button-3" do %>
+        <i class="fa-brands fa-twitter"></i> つぶやく
+      <% end %>
+      <%= link_to "ホーム", root_path, class:"button-4" %>
+    </div>
+  </div>
 </div>
