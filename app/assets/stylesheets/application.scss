@@ -58,9 +58,10 @@ body:before {
 }
 
 // top.html.erb
-.text-center {
-    text-align: center;
-    color: white;
+.container {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .cover {
@@ -110,7 +111,7 @@ body:before {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.8);
     max-width: 80%;
-    padding: 15px 30px;
+    padding: 20px 30px;
 }
 
 .button:hover {
@@ -150,6 +151,10 @@ footer {
     text-align: center;
 }
 
+.analysis-btn {
+    margin-top: 20px;
+}
+
 .emotion {
     font-size: 20px;
     font-weight: bold;
@@ -160,7 +165,8 @@ footer {
 }
 
 .btn-2 {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* ボタン */
@@ -171,12 +177,100 @@ footer {
     border: 2px solid #fff;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.8);
-    max-width: 80%;
-    padding: 15px 30px;
-    margin-top: 30px;
+    padding: 15px 20px;
+    margin: 20px 30px;
 }
 
 .button-2:hover {
+    background:  rgba(255, 255, 255, 0.8);
+    color: #000;
+    border: 2px solid #000;
+}
+
+// result_show.html.erb
+.result_emotion, .result_song {
+    text-shadow: 3px 3px 3px #000;
+}
+
+.result_emotion {
+    border: outset 2px rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    background-color: rgba(127, 127, 127, 0.9);
+    display: flex;
+    padding: 30px 70px;
+}
+
+.result_emotion img {
+    margin: auto;
+}
+
+.result_emotion p {
+    font-size: 18px;
+    margin: auto;
+}
+
+.result_song h4 {
+    padding: 0 10px;
+    margin: 40px 0 30px 0;
+}
+
+.result_song p {
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.result_song audio {
+    margin: auto;
+}
+
+.song_info {
+    display: flex;
+    margin: 10px auto;
+}
+
+.card {
+    background-color: rgba(50, 50, 50, 0.9) !important;
+    padding: 50px 30px;
+}
+
+.btn-3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ボタン */
+.button-3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 80%;
+    padding: 15px 13px 15px 17px;
+    margin: 20px 50px;
+}
+
+.button-3:hover {
+    background:  rgba(255, 255, 255, 0.8);
+    color: #000;
+    border: 2px solid #000;
+}
+
+.button-4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 80%;
+    padding: 15px 30px;
+    margin: 20px 50px;
+}
+
+.button-4:hover {
     background:  rgba(255, 255, 255, 0.8);
     color: #000;
     border: 2px solid #000;
@@ -214,8 +308,9 @@ footer {
 }
 
 .spotify {
+    font-size: 20px;
     margin-left: 5px;
-    margin-top: 18px;
+    margin-top: 16px;
 }
 
 .img-pre {
@@ -243,7 +338,7 @@ footer {
 }
 
 .result {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .album {
@@ -255,21 +350,23 @@ footer {
 }
 
 .track {
-    padding: 0 7rem;
+   padding: 0 8rem;
 }
 
 .row {
     font-size: 20px;
-    display: flex;
-    padding-left: 50px;
+}
+
+.track_name {
+    width: 310px !important;
 }
 
 .track p {
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .form {
-    margin: 0 0 0 auto;
+    width: 60px !important;
 }
 
 // song_search.html.erb
@@ -294,12 +391,6 @@ footer {
 .row2 {
     display: flex;
     flex-wrap: wrap;
-}
-
-.card {
-    background-color: #242424d3 !important;
-    padding: 1.5rem 1rem;
-    margin: 0 10px;
 }
 
 /* スマホ対応 */
