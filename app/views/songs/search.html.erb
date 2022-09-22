@@ -18,8 +18,7 @@
                 <p class="artist"><%= album.artists[0].name %></p>
               </div>
               <% album.tracks.each do |track|  %>
-                <%= track.name %>
-                <%= track.audio_features.danceability %><br>
+                <%= track.name %><br>
               <% end %>
               <br>
             </div>

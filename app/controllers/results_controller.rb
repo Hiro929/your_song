@@ -51,7 +51,7 @@ class ResultsController < ApplicationController
                    elsif face_detail.emotions[0].type == 'SAD'
                      @songs = Song.where(
                        'valence > ? or acousticness >= ? or danceability <= ?',
-                       0.5, 0.0039,0.39
+                       0.5, 0.0039, 0.39
                      )
                      @song = @songs.sample
                      {
@@ -82,7 +82,7 @@ class ResultsController < ApplicationController
                      @songs = Song.where('acousticness <= ? or valence >= ?', 0.0038, 0.6)
                      @song = @songs.sample
                      {
-                       body: "あなたは嫌悪感を抱いています(´･д･`)ﾔﾀﾞ",
+                       body: "あなたはうんざりしています( ≖_≖​)ﾊｧ･･･",
                        emotion: "DISGUSTED",
                        song_id: @song.id
                      }

@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def index
-    @songs = Song.all.includes(:result)
+    @songs = Song.all.includes(:result).page(params[:page])
   end
 
   def new
@@ -19,7 +19,7 @@ class SongsController < ApplicationController
       redirect_to songs_path, success: "#{@song.title}を登録しました！"
     else
       flash.now[:alert] = "すでに登録されているか、正常に登録されませんでした。"
-      render :new
+      redirect_to songs_path
     end
   end
 
