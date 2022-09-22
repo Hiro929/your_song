@@ -1,8 +1,8 @@
 <div class="cover-container d-flex mx-auto flex-column">
   <div class="container text-center">
     <div class="camera">
-      <video id="video" width="400" height="300" autoplay="1" playsinline></video>
-      <canvas id="canvas" width="400" height="300"></canvas>
+      <video id="video" autoplay playsinline width="300" height="300"></video>
+      <canvas id="canvas" width="300" height="300"></canvas>
     </div>
     <div class="analysis-btn">  
       <button class="button-2" id="analysis">診断する</button>
@@ -16,7 +16,7 @@
         <%= f.hidden_field :image, id: "photo" %>
         <%= f.hidden_field :emotion, id: "emotion" %>
         <%= f.hidden_field :song_id, id: "song_id" %>
-        <%= f.submit  "判定結果", class: "button-2", id: "song" %>
+        <%= f.submit  "選曲結果", class: "button-2", id: "song" %>
       <% end %>
     </div>
   </div>
@@ -27,17 +27,26 @@
   $('#reload').hide();
   $('#song').hide();
 
-  // カメラの起動
-  const video = document.getElementById("video")
-  navigator.mediaDevices.getUserMedia({
-    video: true,
+  // カメラ設定
+  const constraints = {
     audio: false,
-  }).then(stream => {
+    video: {
+      width: 300,
+      height: 300,
+      facingMode: "user"
+    }
+  };
+
+  navigator.mediaDevices.getUserMedia(constraints)
+  .then( (stream) => {
     video.srcObject = stream;
-    video.play()
-  }).catch(e => {
-    console.log(e)
+    video.onloadedmetadata = (e) => {
+      video.play();
+    };
   })
+  .catch( (err) => {
+    console.log(err.name + ": " + err.message);
+  });
 
   const analysis = document.getElementById("analysis")
 
@@ -46,7 +55,7 @@
     $('#canvas').show();
 
     var canvas = document.getElementById("canvas");
-    canvas.getContext("2d").drawImage(video, 0, 0, 400, 300)
+    canvas.getContext("2d").drawImage(video, 0, 0, 300, 300)
 
     // canvas上の画像をbase64に変換
     const base64 = canvas.toDataURL('image/jpeg');

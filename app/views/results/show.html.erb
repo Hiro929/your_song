@@ -1,17 +1,17 @@
 <div class="cover-container d-flex mx-auto flex-column">
   <div class="container">
     <div class="result_emotion">
-      <img src="<%= "data:image/png;base64,#{@result.image}" %>" width="100" height="80">
-      <p>あなたの感情 : <%= @result.emotion %></p>
+      <img src="<%= "data:image/png;base64,#{@result.image}" %>" width="100" height="100">
+      <p>あなたの感情 : <%= @result.emotion_i18n %></p>
     </div>
 
     <div class="result_song">
       <h4>↓そんなあなたにおすすめの曲がこちらです↓</h4>
       <div class="card">
-        <img src="<%= "#{@result.song.album_image}" %>", class="d-block mx-auto" width="150" height="150">
+        <img src="<%= "#{@result.song.album_image}" %>", class="d-block mx-auto" width="200" height="200">
         <div class="song_info">
           <p><%= @result.song.title %></p>
-          <%= link_to "#{@result.song.spotify_url}", class: "spotify" do %>
+          <%= link_to "#{@result.song.spotify_url}", class: "spotify-2", target: '_blank' do %>
             <i class="fa-brands fa-spotify" style = "color: green"></i>
           <% end %>
         </div>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="btn-3">
-      <%= link_to "#", class: "twitter button-3" do %>
+      <%= link_to "https://twitter.com/share?url=#{request.url}&text=あなたの感情は、#{@result.emotion_i18n}です。%0a%0aそんなあなたにおすすめの曲は、「#{@result.song.title}」です！%0a&hashtags=yoursong", class: "twitter button-3", target: '_blank' do %>
         <i class="fa-brands fa-twitter"></i> つぶやく
       <% end %>
       <%= link_to "ホーム", root_path, class:"button-4" %>

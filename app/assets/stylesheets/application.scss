@@ -148,7 +148,7 @@ footer {
 
 // result_new.html.erb
 .camera {
-    text-align: center;
+    justify-content: center;
 }
 
 .analysis-btn {
@@ -225,7 +225,9 @@ footer {
 
 .song_info {
     display: flex;
-    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .card {
@@ -233,10 +235,15 @@ footer {
     padding: 50px 30px;
 }
 
+.spotify-2 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
 .btn-3 {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* ボタン */
@@ -299,18 +306,19 @@ footer {
 
 .song {
     display: flex;
-    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
 }
 
 .song p {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 14px;
 }
 
 .spotify {
     font-size: 20px;
     margin-left: 5px;
-    margin-top: 16px;
 }
 
 .img-pre {
@@ -330,6 +338,20 @@ footer {
 
 .song audio {
     margin-left: 20px;
+}
+
+.pagination>li>a {
+    border: none;
+    color: #000;
+}
+  
+.pagination>li>a:hover {        
+    background: #0d6efd;
+    color: #fff; 
+}
+
+.pagination {
+    justify-content: center;
 }
 
 // song_new.html.erb
@@ -410,17 +432,19 @@ body:before {
     background-position: center;
 }
 
+// header.html.erb
 .logo {
     width: 150px;
     height: 50px;
 }
 
-.cover {
+// top.html.erb
+.container {
     margin-top: 60px;
 }
 
-.cover h1 {
-    font-size: 4.5rem;
+.container h1 {
+    font-size: 4rem;
 }
 
 .lead {
@@ -431,13 +455,70 @@ body:before {
     font-size: 11px;
 }
 
-.btn-1 {
+.button {
     font-size: 11px;
     padding: 10px 20px;
     margin-top: 5px;
 }
 
+// footer.html.erb
 .link, .copyright {
     font-size: 12px;
+}
+
+// result_new.html.erb
+.container {
+    margin: 20px 0;
+}
+
+.emotion {
+    font-size: 16px;
+}
+
+// result_show.html.erb
+.result_song h4 {
+    font-size: 16px;
+    text-align: center;
+}
+
+.result_emotion {
+    padding: 30px 50px;
+}
+
+.result_emotion p {
+    font-size: 14px;
+}
+
+.card {
+    padding: 30px;
+}
+
+.result_song p {
+    font-size: 16px;
+}
+
+.result_emotion img {
+    width: 70px;
+    height: 70px;
+}
+
+.result_song img {
+    width: 150px;
+    height: 150px;
+}
+
+audio {
+    width: 280px !important;
+}
+
+.button-3 {
+    font-size: 10px;
+    padding: 15px 17px 15px 21px;
+    margin: 20px 30px;
+}
+
+.button-4 {
+    font-size: 10px;
+    margin: 20px 30px
 }
 }
