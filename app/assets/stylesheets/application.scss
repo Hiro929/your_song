@@ -85,6 +85,12 @@ body:before {
     text-shadow: 3px 3px 3px #000;
 }
 
+.overview {
+    color: #fff;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
 .ps {
     font-size: 15px;
     margin-top: 40px;
@@ -444,15 +450,15 @@ body:before {
 }
 
 .container h1 {
-    font-size: 4rem;
+    font-size: 64px;
 }
 
 .lead {
-    font-size: 0.8rem !important;
+    font-size: 14px !important;
 }
 
 .ps {
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .button {

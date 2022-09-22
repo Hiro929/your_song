@@ -32,8 +32,12 @@ class ResultsController < ApplicationController
     response = client.detect_faces attrs
 
     if response.face_details == []
+      @songs = Song.all
+      @song = @songs.sample
       render json: {
-        body: "分析失敗しました(>_<)"
+        body: "分析失敗(>_<)(顔が写っていない等)",
+        emotion: "UNKNOWN",
+        song_id: @song.id
       }
     else
       response.face_details.each do |face_detail|
