@@ -4,10 +4,12 @@
       <h1 class="cover-heading">your song</h1>
       <div class="cover2">
         <p class="lead">今のあなたにぴったりな曲を見つけよう!</p>
-        <%= link_to "さっそくはじめる", new_result_path, class:"custom-btn button" %>
+        <div class="top-btn">
+          <%= link_to "さっそくはじめる", new_result_path, class:"button" %>
+        </div>
       </div>
       <div class="overview">
-
+        <%= link_to ">>使い方<<", overview_path, class: "link" %>
       </div>
       <p class="ps">※本アプリは、SUPER BEAVER の楽曲のみの提案になります。</p>
     </div>
