@@ -1,5 +1,25 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <div class="container">
-    
+  <div class="service">
+    <h2 class="service-title text-center">使い方</h2>
+    <div class="service-content">
+      <p class="content-title">あなたの表情から感情を分析</p>
+      <p>
+        あなたの表情を撮影してください。<br>
+        すると、感情分析を行い結果が表示されます。<br>
+        感情を表情に表現して、特定の感情を狙ってみるのもいいかもしれません。<br>
+        （感情タイプ：幸せ 悲しみ 怒り 困惑 驚き 穏やか うんざり 恐れ 無感情）
+      </p>
+    </div>
+    <div class="service-content">
+      <p class="content-title">分析結果に応じたおすすめの曲を提案</p>
+      <p>
+        あなたの感情に合った曲を提案します。<br>
+        spotifyのアイコンをクリックするとspotifyの曲のページに遷移します。<br>
+        歌詞をみながら曲を聴くことをおすすめします!
+      </p>
+    </div>
+    <div class="overview-btn">
+      <%= link_to "さっそくはじめる", new_result_path, class:"button" %>
+    </div>
   </div>
 </div>

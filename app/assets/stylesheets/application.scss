@@ -87,17 +87,17 @@ body:before {
 
 .overview {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
     margin-top: 20px;
 }
 
 .ps {
     font-size: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 /* ボタン */
-.custom-btn {
+.top-btn {
     padding: 10px 25px;
     font-weight: 500;
     background: transparent;
@@ -106,7 +106,8 @@ body:before {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
 .button {
@@ -117,7 +118,7 @@ body:before {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.8);
     max-width: 80%;
-    padding: 20px 30px;
+    padding: 15px 25px;
 }
 
 .button:hover {
@@ -152,13 +153,51 @@ footer {
     text-decoration: none;
 }
 
+// overview.html.erb
+.service {
+    color: #fff;
+    border: outset 3px rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    background-color:  rgba(50, 50, 50, 0.9);
+    padding: 40px 40px 55px 40px;
+}
+
+.service-title {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.service-content {
+    text-shadow: 2px 2px 2px #000;
+    margin: 40px 0;
+}
+
+.content-title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.overview-btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
 // result_new.html.erb
 .camera {
     justify-content: center;
 }
 
+video, canvas {
+    border: inset 5px rgba(255, 255, 255, 0.9);
+}
+
 .analysis-btn {
     margin-top: 20px;
+}
+
+.warning {
+    font-size: 12px;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .emotion {
@@ -194,7 +233,7 @@ footer {
 }
 
 // result_show.html.erb
-.result_emotion, .result_song {
+.result_emotion, .result_song h4, .result_song p {
     text-shadow: 3px 3px 3px #000;
 }
 
@@ -459,6 +498,10 @@ body:before {
 
 .ps {
     font-size: 10px;
+}
+
+.overview {
+    margin-top: 5px;
 }
 
 .button {
