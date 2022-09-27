@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#top'
   get 'overview', to: 'home#overview'
+  get 'privacypolicy', to: 'home#privacypolicy'
 
   resources :songs, only: %i[index new create] do
     collection {get 'search'}
