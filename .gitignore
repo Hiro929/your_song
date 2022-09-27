@@ -36,4 +36,5 @@ yarn-debug.log*
 .yarn-integrity
 /vendor/bundle
 AWSCLIV2.pkg
+.DS_Store
 .env
