@@ -74,3 +74,5 @@ gem 'dotenv-rails'
 gem 'font-awesome-sass'
 #ページネーション
 gem 'kaminari'
+#metaタグ設定
+gem 'meta-tags'
