@@ -1,7 +1,7 @@
 <div class="cover-container d-flex mx-auto flex-column">
   <div class="container">
     <div class="result_emotion">
-      <img src="<%= "data:image/png;base64,#{@result.image}" %>" width="100" height="100">
+      <img src="<%= "data:image/png;base64,#{@result.image}" %>", class="result_image" width="100" height="100">
       <p>あなたの感情 : <%= @result.emotion_i18n %></p>
     </div>
 
@@ -21,9 +21,12 @@
 
     <div class="btn-3">
       <%= link_to "https://twitter.com/share?url=#{request.url}&text=あなたの感情は、#{@result.emotion_i18n}です。%0a%0aそんなあなたにおすすめの曲は、「#{@result.song.title}」です！%0a&hashtags=yoursong", class: "twitter button-3", target: '_blank' do %>
-        <i class="fa-brands fa-twitter"></i> つぶやく
+        <i class="fa-brands fa-twitter"></i> 結果をシェア
       <% end %>
-      <%= link_to "ホーム", root_path, class:"button-4" %>
+    </div>
+    <div class="btn-4">
+      <%= link_to "もう一度診断", new_result_path, class: "button-4" %>
+      <%= link_to "トップページ", root_path, class: "button-5" %>
     </div>
   </div>
 </div>
