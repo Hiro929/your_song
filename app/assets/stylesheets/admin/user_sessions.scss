@@ -1,0 +1,27 @@
+// Place all the styles related to the admin::user_sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// admin_user_sessions_new.html.erb
+.login_card {
+    color: #fff;
+    background-color:  rgb(80, 80, 80);
+    padding: 40px 40px;
+}
+
+.login_form label {
+    margin-top: 20px;
+}
+
+.email, .password {
+    width: 300px !important;
+}
+
+.login_button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn {
+    width: 300px !important;
+}

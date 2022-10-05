@@ -1,7 +1,10 @@
-<header class="masthead mb-auto sticky-top">
-  <nav class="navbar navbar-expand">
+<header class="masthead sticky-top">
+  <nav class="navbar">
     <%= link_to root_path, data: {"turbolinks" => false} do %>
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
+    <div class="header_right">
+      <%= link_to "使い方", overview_path, class: "link", data: {"turbolinks" => false} %>
+    </div>
   </nav>
 </header>

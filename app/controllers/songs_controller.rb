@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  before_action :require_login
+  before_action :check_admin
   require 'rspotify'
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
@@ -34,5 +36,14 @@ class SongsController < ApplicationController
 
   def song_params
     params.require(:song).permit(:artist, :title, :acousticness, :danceability, :energy, :tempo, :valence, :album_image, :preview_url, :spotify_url)
+  end
+
+  def not_authenticated
+    flash[:warning] = "ログインしてください"
+    redirect_to admin_login_path
+  end
+
+  def check_admin
+    redirect_to admin_login_path, warning: "権限がありません" unless current_user.admin?
   end
 end

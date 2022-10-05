@@ -1,0 +1,13 @@
+<header class="masthead mb-auto sticky-top">
+  <nav class="navbar">
+    <%= link_to root_path, data: {"turbolinks" => false} do %>
+      <%= image_tag 'logo.png', class:'logo' %>
+    <% end %>
+    <div class="header_right">
+      <%= link_to "登録曲一覧", songs_path, class: "link" %>
+      <%= link_to "楽曲登録", new_song_path, class: "link" %>
+      <%= link_to "全曲検索", search_songs_path, class: "link" %>
+      <%= link_to "ログアウト", admin_logout_path, class: "link", method: :delete %>
+    </div>
+  </nav>
+</header>
