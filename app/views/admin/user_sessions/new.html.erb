@@ -1,0 +1,17 @@
+<div class="cover-container d-flex mx-auto mt-auto flex-column">
+  <div class="login_card">
+    <h4 class="text-center">ログイン</h4>
+    <div class="login_form">
+      <%= form_with url: admin_login_path, local: true do |f| %>
+        <%= f.label :email, "メールアドレス"%>
+        <%= f.email_field :email, class: 'form-control email', placeholder: "Email" %>
+
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: 'form-control password', placeholder: "password" %>
+        <div class="login_button">
+          <%= f.submit "ログイン", class: 'btn btn-block btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

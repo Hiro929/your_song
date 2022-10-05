@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-auto">
   <div class="search text-center">
     <%= form_with url: search_songs_path, method: :get, local: true do |f| %>
       <%= f.text_field :album, placeholder: "アーティスト名など", value: @search_params %>
