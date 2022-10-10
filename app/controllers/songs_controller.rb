@@ -20,8 +20,8 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to songs_path, success: "#{@song.title}を登録しました！"
     else
-      flash.now[:alert] = "すでに登録されているか、正常に登録されませんでした。"
-      redirect_to songs_path
+      flash.now[:danger] = "すでに登録されているか、正常に登録されませんでした。"
+      render :new
     end
   end
 

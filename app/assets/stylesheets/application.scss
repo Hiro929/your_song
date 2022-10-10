@@ -46,7 +46,7 @@ body:before {
 
 //header.html.erb
 .navbar {
-    background-color: rgba(50, 50, 50, 0.8);
+    background-color: rgba(50, 50, 50, 0.5);
 }
 
 .logo {
@@ -84,7 +84,7 @@ body:before {
 
 .cover h1 {
     font-size: 122px;
-    margin-top: 0px;
+    margin-top: 50px;
     text-shadow: 3px 3px 3px #000;
 }
 
@@ -236,7 +236,7 @@ video, canvas {
     font-weight: bold;
     color:#fff;
     text-shadow: 3px 3px 3px #000;
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -274,9 +274,9 @@ video, canvas {
 }
 
 .result_emotion {
-    border: outset 2px rgba(255, 255, 255, 0.9);
+    border: outset 2px rgb(255, 255, 255);
     border-radius: 5px;
-    background-color: rgba(127, 127, 127, 0.9);
+    background-color: rgb(127, 127, 127);
     display: flex;
     padding: 30px 70px;
 }
@@ -291,7 +291,7 @@ video, canvas {
 }
 
 .result_image {
-    border: inset 2px rgba(255, 255, 255, 0.9);
+    border: inset 2px rgb(255, 255, 255);
 }
 
 .result_song h4 {
@@ -316,7 +316,7 @@ video, canvas {
 }
 
 .card {
-    background-color: rgba(50, 50, 50, 0.9) !important;
+    background-color: rgb(50, 50, 50) !important;
     padding: 50px 30px;
 }
 
@@ -393,7 +393,7 @@ video, canvas {
 
 // song_index.html.erb
 .card2 {
-    background-color: #242424d3 !important;
+    background-color: rgb(50, 50, 50) !important;
     padding: 1.5rem 5rem;
     margin-bottom: 2rem;
 }
@@ -547,16 +547,21 @@ body:before {
 }
 
 // top.html.erb
-.container {
+.container h1 {
+    font-size: 58px;
     margin-top: 60px;
 }
 
-.container h1 {
-    font-size: 58px;
+.cover2 {
+    margin-top: 70px;
 }
 
 .lead {
     font-size: 14px !important;
+}
+
+.top-btn {
+    margin-top: 10px;
 }
 
 .ps {
@@ -572,6 +577,11 @@ body:before {
     padding: 15px 20px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+//footer.html.erb
+.inner {
+    font-size: 12px;
 }
 
 // overview.html.erb
@@ -633,6 +643,12 @@ body:before {
     font-size: 18px;
 }
 
+.button-2 {
+    font-size: 12px;
+    padding: 15px 20px;
+    margin: 20px 30px;
+}
+
 // result_show.html.erb
 .result_song h4 {
     font-size: 16px;
@@ -651,8 +667,13 @@ body:before {
     padding: 30px;
 }
 
+.result_song h4 {
+    padding: 0 0;
+    margin: 40px 0 30px 0;
+}
+
 .result_song p {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .result_emotion img {
