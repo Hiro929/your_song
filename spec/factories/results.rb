@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :result do
-    song { nil }
+    song_id { 1 }
     image { "MyString" }
     emotion { 1 }
   end

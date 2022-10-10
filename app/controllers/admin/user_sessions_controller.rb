@@ -10,7 +10,7 @@ class Admin::UserSessionsController < Admin::BaseController
     if @user
       redirect_to songs_path, success: "ログインしました！"
     else
-      flash.now[:alert] = "ログインに失敗しました"
+      flash.now[:danger] = "ログインに失敗しました！"
       render :new
     end
   end
