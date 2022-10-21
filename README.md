@@ -46,19 +46,19 @@ super beaverを好きな人で、どの曲を聴くか悩む。
 
 ## 使用技術
 
-**バックエンド**
+**バックエンド**  
 Ruby 3.0.3  
 Ruby on Rails 6.1.4
 
-**フロントエンド**
+**フロントエンド**  
 Javascript  
 Bootstrap
 
-**外部API**
+**外部API**  
 Amazon Rekognition  
 Spotify API
 
-**インフラ**
+**インフラ**  
 Heroku  
 postgreSQL
 
