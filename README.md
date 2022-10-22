@@ -2,7 +2,7 @@
 ![ogp](https://user-images.githubusercontent.com/79961416/194931854-07d2f232-3c85-46ef-a5d9-3e16e06b8442.png)
 
 ### ▼ サービスURL
-### https://www.your-song.site/
+https://www.your-song.site/
   
 ## サービス概要
 
