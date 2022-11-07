@@ -4,10 +4,9 @@
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
     <div class="header_right">
-      <%= link_to "登録曲一覧", songs_path, class: "link" %>
-      <%= link_to "楽曲登録", new_song_path, class: "link" %>
-      <%= link_to "全曲検索", search_songs_path, class: "link" %>
-      <%= link_to "ログアウト", admin_logout_path, class: "link", method: :delete %>
+      <%= link_to "投稿一覧", "#", class: "link", data: {"turbolinks" => false} %>
+      <%= link_to "投稿する", "#", class: "link", data: {"turbolinks" => false} %>
+      <%= link_to "ログアウト", "#", class: "link", method: :delete %>
     </div>
   </nav>
 </header>
