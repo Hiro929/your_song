@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   end
   resources :results, only: %i[show new create]
   post 'results/analysis', to: 'results#analysis'
+
+  get 'login', to: 'user_sessions#new'
+  post 'login', to: 'user_sessions#create'
+  delete 'logout', to: 'user_sessions#destroy'
+
+  resources :users, only: %i[new create]
   
   namespace :admin do
     get 'login', to: 'user_sessions#new'
