@@ -7,7 +7,11 @@
   </div>
 
   <div class="result">
-    <h3>アルバム一覧</h3>
+    <div class="index2">
+      <h3>アルバム一覧</h3>
+      <%= link_to "登録曲一覧", songs_path, class: "link" %>
+      <%= link_to "ログアウト", admin_logout_path, class: "link", method: :delete %>
+    </div>
     <div>
       <% if @albums.present? %>
         <% @albums.each do |album| %>

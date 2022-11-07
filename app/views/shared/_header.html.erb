@@ -4,6 +4,8 @@
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
     <div class="header_right">
+      <%= link_to "ユーザー登録", new_user_path, class: "link", data: {"turbolinks" => false} %>
+      <%= link_to "ログイン", "#", class: "link", data: {"turbolinks" => false} %>
       <%= link_to "使い方", overview_path, class: "link", data: {"turbolinks" => false} %>
     </div>
   </nav>
