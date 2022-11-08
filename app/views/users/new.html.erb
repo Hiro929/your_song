@@ -4,22 +4,27 @@
     <div class="login_form">
       <%= form_with model: @user, local: true do |f| %>
         <div class="form-group">
+          <i class="fa-regular fa-user"></i>
           <%= f.label :name, "ユーザー名"%>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fa-regular fa-envelope"></i>
           <%= f.label :email, "メールアドレス"%>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fa-solid fa-music"></i>
           <%= f.label :best_song, "SUPER BEAVERで一番好きな曲（任意）"%>
           <%= f.text_field :best_song, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fa-solid fa-lock"></i>
           <%= f.label :password, "パスワード" %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fa-solid fa-lock"></i>
           <%= f.label :password_confirmation, "パスワード確認" %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
