@@ -11,3 +11,20 @@
 .btn {
     width: 420px !important;
 }
+
+.btn-user {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgb(255, 145, 0);
+    padding: 6px 12px;
+    width: 100%;
+}
+
+.btn-user:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}

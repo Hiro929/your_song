@@ -5,6 +5,7 @@
 // admin_user_sessions_new.html.erb
 .login_card {
     color: #fff;
+    border: outset 2px rgba(255, 255, 255, 0.9);
     background-color: rgb(50, 50, 50);
     padding: 40px 40px;
     margin: 30px 0;
@@ -18,8 +19,4 @@
 .login_button {
     margin-top: 30px;
     text-align: center;
-}
-
-.btn {
-    width: 300px !important;
 }
