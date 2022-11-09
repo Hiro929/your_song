@@ -1,0 +1,24 @@
+<div class="container pt-3">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="profile">
+          <h1 class="mb-5">プロフィール</h1>
+          <%= link_to "編集", edit_profile_path, class: 'btn-edit mb-5' %>
+        </div>
+        <table class="table">
+          <tr>
+            <th scope="row">ユーザー名</th>
+            <td><%= current_user.name %></td>
+          </tr>
+          <tr>
+            <th scope="row">メールアドレス</th>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <th scope="row">SUPER BEAVERで一番好きな曲</th>
+            <td><%= current_user.best_song %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
