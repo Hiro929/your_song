@@ -4,9 +4,19 @@
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
     <div class="header_right">
-      <%= link_to "投稿一覧", "#", class: "link", data: {"turbolinks" => false} %>
-      <%= link_to "投稿する", "#", class: "link", data: {"turbolinks" => false} %>
-      <%= link_to "ログアウト", logout_path, class: "link", method: :delete %>
+      <%= link_to "投稿一覧", "#", class: "nav-link", data: {"turbolinks" => false} %>
+      <%= link_to "投稿する", "#", class: "nav-link", data: {"turbolinks" => false} %>
+      <div class="dropdown">
+        <button class="btn-dropdown rounded-circle" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><font class="user_name"><%= current_user.name %></font></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "プロフィール", profile_path, class: "dropdown-item", data: {"turbolinks" => false} %></li>
+          <li><%= link_to "ログアウト", logout_path, class: "dropdown-item", method: :delete %></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>

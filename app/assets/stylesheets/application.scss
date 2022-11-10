@@ -44,6 +44,17 @@ body:before {
     max-width: 42em;
 }
 
+.link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.link:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
 //header.html.erb
 .navbar {
     background-color: rgba(50, 50, 50, 0.5);
@@ -56,18 +67,36 @@ body:before {
 }
 
 .header_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
 }
 
-.link {
-    color: rgb(255, 255, 255);
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: rgb(220, 220, 220) !important;
+}
+
+.btn-dropdown {
+    color: #fff;
+    border: 2px solid rgb(170, 170, 170);
     text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    padding: auto;
     margin: 0 10px;
 }
 
-.link:hover {
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
+.btn-dropdown:hover {
+    background-color: rgb(150, 150, 150);
+    border: 2px solid rgb(150, 150, 150);
+}
+
+.user_name {
+    padding: 4px 16px;
 }
 
 // top.html.erb

@@ -1,8 +1,8 @@
 <div class="cover-container d-flex mx-auto mt-auto flex-column">
   <div class="login_card">
-    <h4 class="text-center"><i class="fa-regular fa-user"></i>ユーザー登録</h4>
+    <h4 class="text-center"><i class="fa-regular fa-user"></i>プロフィール編集</h4>
     <div class="login_form">
-      <%= form_with model: @user, local: true do |f| %>
+      <%= form_with model: @user, url: profile_path, local: true do |f| %>
         <div class="form-group">
           <i class="fa-regular fa-user"></i>
           <%= f.label :name, "ユーザー名"%>
@@ -18,18 +18,8 @@
           <%= f.label :best_song, "SUPER BEAVERで一番好きな曲（任意）"%>
           <%= f.text_field :best_song, class: 'form-control' %>
         </div>
-        <div class="form-group">
-          <i class="fa-solid fa-lock"></i>
-          <%= f.label :password, "パスワード" %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <i class="fa-solid fa-lock"></i>
-          <%= f.label :password_confirmation, "パスワード確認" %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
         <div class="register_button">
-          <%= f.submit "登録", class: 'btn-user' %>
+          <%= f.submit "更新", class: 'btn-user' %>
         </div>
       <% end %>
     </div>

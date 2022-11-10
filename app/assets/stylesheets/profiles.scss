@@ -1,26 +1,31 @@
-// Place all the styles related to the users controller here.
+// Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// users_new.html.erb
-.register_button {
-    margin-top: 30px;
-    text-align: center;
+// profile_show.html.erb
+.profile {
+    display: flex;
+    margin: auto;
 }
 
-.btn-user {
+.btn-edit {
     font-size: 14px;
     font-weight: bold;
     color: #fff;
     border: 2px solid #fff;
     border-radius: 0.25rem;
     text-decoration: none;
+    line-height: 3;
     background-color: rgb(255, 150, 0);
-    padding: 6px 12px;
-    width: 420px !important;
+    padding: 0 12px;
+    margin-left: auto;
 }
 
-.btn-user:hover {
+.btn-edit:hover {
     background:  rgb(255, 255, 255);
     color: #000;
+}
+
+table {
+    color: #fff !important;
 }
