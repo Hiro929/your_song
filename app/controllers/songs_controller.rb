@@ -25,9 +25,9 @@ class SongsController < ApplicationController
   end
 
   def search
-    if params[:album].present?
-      @albums = RSpotify::Album.search(params[:album], market: 'JP')
-      @search_params = params[:album]
+    if params[:track].present?
+      @tracks = RSpotify::Track.search(params[:track], market: 'JP', limit: 9)
+      @search_params = params[:track]
     end
   end
 

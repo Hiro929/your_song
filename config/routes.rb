@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   get 'privacypolicy', to: 'home#privacypolicy'
   get 'terms', to: 'home#terms'
 
-  resources :songs, only: %i[index new create] do
-    collection {get 'search'}
-  end
+  resources :songs, only: %i[index new create]
+  
   resources :results, only: %i[show new create]
   post 'results/analysis', to: 'results#analysis'
 
@@ -15,6 +14,11 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[new create]
+
+  resources :posts do
+    collection {get 'search'}
+  end
+
   resource :profile, only: %i[show edit update]
   
   namespace :admin do

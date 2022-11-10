@@ -4,8 +4,8 @@
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
     <div class="header_right">
-      <%= link_to "投稿一覧", "#", class: "nav-link", data: {"turbolinks" => false} %>
-      <%= link_to "投稿する", "#", class: "nav-link", data: {"turbolinks" => false} %>
+      <%= link_to "投稿一覧", posts_path, class: "nav-link", data: {"turbolinks" => false} %>
+      <%= link_to "投稿する", search_posts_path, class: "nav-link", data: {"turbolinks" => false} %>
       <div class="dropdown">
         <button class="btn-dropdown rounded-circle" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-regular fa-user"></i>
