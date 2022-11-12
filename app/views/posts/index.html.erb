@@ -1,13 +1,28 @@
 <div class="container mt-auto">
   <div class="result2">
-    <div class="row2">
+    <div class="row2 post_index">
       <% if @posts.present? %>
         <% @posts.each do |post| %>
           <div class="col-md-4">
-            <div class="mb-4 mx-4">
+            <div class="index_card mb-4 mx-4">
               <iframe src="https://open.spotify.com/embed/track/<%= post.track_id %>?utm_source=generator" 
-                width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                width="100%" height="250" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
               </iframe>
+              <div class=" index_emotional_state text-center">
+                <p><%= post.emotional_state_i18n %></p>
+              </div>
+              <div class="user_card">
+                <i class="fa-regular fa-user"></i>
+                <p class="index_user"><%= post.user.name %></p>
+                <div class="index_link">
+                  <%= link_to "#", class: 'link' do %>
+                    <i class="fa-solid fa-pen"></i>
+                  <% end %>
+                  <%= link_to "#", class: 'link' do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>

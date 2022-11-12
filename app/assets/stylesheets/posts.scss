@@ -1,3 +1,113 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// index.html.erb
+.index_card {
+    background-color: rgba(50, 50, 50, 0.8) !important;
+    padding: 30px 30px;
+}
+
+.post_index {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.index_emotional_state {
+    font-size: 20px;
+}
+
+.user_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index_user {
+    margin: 0px 5px;
+}
+
+.index_link {
+    margin-left: auto;
+}
+
+// search.html.erb
+.btn-search {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgba(170, 170, 170, 0.5);
+    padding: 3px 6px;
+}
+
+.btn-search:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+.result2 {
+    color: #fff;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-share {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    padding: 10px 40px;
+}
+
+.btn-share:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+// new.html.erb
+.post_container {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    margin: 50px 0px;
+    width: 600px;
+}
+
+.post_form label {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.select_form {
+    width: 260px !important;
+}
+
+// スマホ対応
+@media (max-width: 1000px) {
+    body:before {
+        content: "";
+        background-image: url("background2.png");
+        background-position: center;
+    }
+}
+
+@media (max-width: 670px) {
+
+body:before {
+    content: "";
+    background-image: url("background2.png");
+    background-position: center;
+}
+
+.post_container {
+    width: auto;
+}
+}
