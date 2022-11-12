@@ -18,3 +18,8 @@ ja:
         CALM: "穏やか"
         FEAR: "恐れ"
         UNKNOWN: "無感情"
+    post:
+      emotional_state:
+        depressed: "落ち込んだ"
+        motivation: "テンション上げたい"
+        relax: "リラックスしたい"
