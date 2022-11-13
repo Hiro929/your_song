@@ -1,16 +1,17 @@
 <div class="cover-container d-flex mx-auto mt-auto flex-column">
   <div class="login_card">
-    <h4 class="text-center"><i class="fa-regular fa-user"></i>ユーザー登録</h4>
+    <h4 class="text-center"><i class="fa-regular fa-user"></i> ユーザー登録</h4>
     <div class="login_form">
       <%= form_with model: @user, local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
           <i class="fa-regular fa-user"></i>
-          <%= f.label :name, "ユーザー名"%>
+          <%= f.label :name %>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="form-group">
           <i class="fa-regular fa-envelope"></i>
-          <%= f.label :email, "メールアドレス"%>
+          <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
@@ -20,12 +21,12 @@
         </div>
         <div class="form-group">
           <i class="fa-solid fa-lock"></i>
-          <%= f.label :password, "パスワード" %>
+          <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="form-group">
           <i class="fa-solid fa-lock"></i>
-          <%= f.label :password_confirmation, "パスワード確認" %>
+          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
         <div class="register_button">

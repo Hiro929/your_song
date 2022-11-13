@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       redirect_to posts_path, success: "投稿しました！"
     else
       flash.now[:danger] = "投稿に失敗しました！"
-      render search_posts_path
+      render :search
     end
   end
 
