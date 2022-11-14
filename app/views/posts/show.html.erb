@@ -1,0 +1,22 @@
+<div class="cover-container d-flex mx-auto flex-column">
+  <div class="post_container">
+    <div class="new_card">
+      <div class="mb-4">
+        <h4><i class="fa-regular fa-user"></i> <%= @post.user.name %></h4>
+        <p>SUPER BEAVERで一番好きな曲：<i class="fa-solid fa-music"></i> <%= @post.user.best_song %></p>
+      </div>
+      <iframe src="https://open.spotify.com/embed/track/<%= @post.track_id %>?utm_source=generator" 
+        width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+      </iframe>
+
+      <div class="post_show">
+        <div class="mt-5">
+          <p class="show_emotional_state">私は<%= @post.emotional_state_i18n %>ときにこの曲を聴きます！</p>
+        </div>
+        <div class="mt-5">
+          <%= @post.body %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
