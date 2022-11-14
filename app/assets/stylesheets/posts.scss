@@ -4,8 +4,8 @@
 
 // index.html.erb
 .index_card {
-    background-color: rgba(50, 50, 50, 0.8) !important;
-    padding: 30px 30px;
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 20px 30px;
 }
 
 .post_index {
@@ -14,12 +14,24 @@
 
 .index_emotional_state {
     font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.link_show {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link_show:hover {
+    color: rgb(200, 200, 200);
 }
 
 .user_card {
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .index_user {
@@ -28,6 +40,16 @@
 
 .index_link {
     margin-left: auto;
+}
+
+// show.html.erb
+.post_show {
+    margin-top: 20px;
+}
+
+.show_emotional_state {
+    font-size: 20px;
+    text-align: center;
 }
 
 // search.html.erb
@@ -77,7 +99,12 @@
     color: #fff;
     text-shadow: 2px 2px 2px #000;
     margin: 50px 0px;
-    width: 600px;
+    width: 680px;
+}
+
+.new_card {
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 40px 40px;
 }
 
 .post_form label {
