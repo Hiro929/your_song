@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// _crud_menus.html.erb
+.icon_link {
+    color: #fff;
+    margin: 0 5px;
+}
+
+.icon_link:hover {
+    color: rgb(190, 190, 190);
+}
+
 // index.html.erb
 .index_card {
     background-color: rgba(50, 50, 50, 0.8);
