@@ -1,0 +1,17 @@
+<tr id="comment-<%= comment.id %>">
+  <td>
+  <p class="comment_user mt-3"><i class="fa-regular fa-user"></i> <%= comment.user.name %></p>
+  <div class="js-comment-<%= comment.id %> comment_body">
+    <%= simple_format(comment.body) %>
+  </div>
+
+  <% if current_user.own?(comment) %>
+    <td class="action">
+      <div class="comment_link mt-3">
+        <%= link_to "#", class: 'icon_link' do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+    </td>
+  <% end %>
+</tr>

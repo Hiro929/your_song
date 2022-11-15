@@ -1,3 +1,63 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// _form.html.erb
+.comment_container {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    width: 680px;
+    margin-bottom: 30px;
+}
+
+.comment_card {
+    background-color: rgba(50, 50, 50, 0.9);
+    border: outset 1px rgba(255, 255, 255, 0.9);
+    padding: 40px 40px;
+}
+
+.btn-comment {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    padding: 10px 20px;
+}
+
+.btn-comment:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+// comments.html.erb
+.comment_index_card {
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 40px 40px;
+}
+
+.table {
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table td {
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+// _comment.html.erb
+.comment_user {
+    font-size: 18px;
+}
+
+.comment_body {
+    font-size: 16px;
+}
+
+.comment_link {
+    color: #fff;
+    text-align: right;
+}

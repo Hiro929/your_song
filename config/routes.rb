@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     collection {get 'search'}
-    resources :comments, only: %i[crete], shallow: true
+    resources :comments, only: %i[create], shallow: true
   end
 
   resource :profile, only: %i[show edit update]
