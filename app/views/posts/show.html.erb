@@ -1,10 +1,11 @@
+<% content_for(:title, @post.emotional_state_i18n) %>
 <div class="cover-container d-flex mx-auto flex-column">
   <div class="post_container">
     <div class="new_card">
       <div class="mb-4">
         <div class="d-flex">
           <h4><i class="fa-regular fa-user"></i> <%= @post.user.name %></h4>
-          <%= render 'crud_menus' %>
+          <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
         </div>
         <p>SUPER BEAVERで一番好きな曲：
           <% if @post.user.best_song.present? %>

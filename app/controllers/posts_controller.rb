@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: [:edit, :update, :destroy]
   AuthenticationService.spotify_authenticate
 
   def index
@@ -26,6 +27,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @post.update(post_params)
+      redirect_to @post, success: "投稿を更新しました！"
+    else
+      flash.now[:danger] = "投稿を更新できませんでした！"
+      render :edit
+    end
+  end
+
+  def destroy
+    @post.destroy!
+    redirect_to posts_path, success: "投稿を削除しました！"
+  end
+
   def search
     if params[:track].present?
       @tracks = RSpotify::Track.search(params[:track], market: 'JP', limit: 9)
@@ -34,6 +51,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def find_post
+    @post = current_user.posts.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:track_id, :emotional_state, :body)
