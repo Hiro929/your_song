@@ -64,12 +64,16 @@
 }
 
 .pagination>li>a:hover {        
-    background: #0d6efd;
+    background: #7e7e7e;
     color: #fff; 
 }
 
 .pagination {
     justify-content: center;
+}
+
+.page-item.active .page-link {
+    background-color: #7e7e7e !important;
 }
 
 // song_new.html.erb

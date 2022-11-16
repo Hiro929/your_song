@@ -5,7 +5,7 @@
   </div>
   <div class="search text-center">
     <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
-      <%= f.text_field :track, placeholder: "曲名、アーティスト名など", size: 30, value: @search_params %>
+      <%= f.text_field :track, placeholder: "曲名、アーティスト名など", size: 25, value: @search_params %>
       <button type="submit", class="btn-search" >
         <i class="fa-solid fa-magnifying-glass"></i>検索
       </button>
