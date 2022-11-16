@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   AuthenticationService.spotify_authenticate
 
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(9)
   end
 
   def show

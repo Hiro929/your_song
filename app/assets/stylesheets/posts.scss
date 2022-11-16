@@ -13,9 +13,19 @@
 }
 
 // index.html.erb
+.index_search {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.search_form {
+    padding: 5px 0px;
+}
+
 .index_card {
-    background-color: rgba(50, 50, 50, 0.8);
-    padding: 20px 30px;
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 30px 30px 20px 30px;
+    margin: 20px;
 }
 
 .post_index {
@@ -24,7 +34,7 @@
 
 .index_emotional_state {
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .link_show {
@@ -37,10 +47,8 @@
 }
 
 .user_card {
-    font-size: 18px;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .index_user {
@@ -123,7 +131,8 @@
 }
 
 .select_form {
-    width: 260px !important;
+    width: 200px !important;
+    padding: 5px 0px;
 }
 
 // スマホ対応

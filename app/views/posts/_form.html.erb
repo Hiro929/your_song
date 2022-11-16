@@ -5,11 +5,11 @@
     </div>
     <div class="form-group">
       <i class="fa-regular fa-circle-down"></i>
-      <%= f.label :emotional_state %>
-      <%= f.select :emotional_state, Post.emotional_states_i18n.invert, { include_blank: '選択してください'}, class: 'form-control select_form' %>
+      <%= f.label :emotional_state %><br>
+      <%= f.select :emotional_state, Post.emotional_states_i18n.invert, { include_blank: '選択してください'}, class: 'select_form' %>
     </div>
     <div class="form-group">
-      <i class="fa-solid fa-pen"></i>
+      <i class="fa-solid fa-pen-to-square"></i>
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control', rows: 3 %>
     </div>
