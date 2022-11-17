@@ -9,7 +9,7 @@
 }
 
 .icon_link:hover {
-    color: rgb(190, 190, 190);
+    color: rgb(170, 170, 170);
 }
 
 // index.html.erb
@@ -43,7 +43,7 @@
 }
 
 .link_show:hover {
-    color: rgb(200, 200, 200);
+    color: rgb(170, 170, 170);
 }
 
 .user_card {
@@ -60,6 +60,11 @@
 }
 
 // show.html.erb
+.show_card {
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 40px 40px 15px 40px;
+}
+
 .post_show {
     margin-top: 20px;
 }
@@ -67,6 +72,21 @@
 .show_emotional_state {
     font-size: 20px;
     text-align: center;
+}
+
+.show_twitter {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.btn-twitter {
+    color: #00acee;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btn-twitter:hover {
+    color: #fff;
 }
 
 // search.html.erb

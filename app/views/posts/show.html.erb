@@ -1,7 +1,7 @@
 <% content_for(:title, @post.emotional_state_i18n) %>
 <div class="cover-container d-flex mx-auto flex-column">
   <div class="post_container">
-    <div class="new_card">
+    <div class="show_card">
       <div class="mb-4">
         <div class="d-flex">
           <h4><i class="fa-regular fa-user"></i> <%= @post.user.name %></h4>
@@ -26,6 +26,11 @@
         <div class="mt-5">
           <%= @post.body %>
         </div>
+      </div>
+      <div class="show_twitter">
+        <%= link_to "https://twitter.com/share?url=#{request.url}&text=私は、#{@post.emotional_state_i18n}ときにこの曲を聴きます！%0a%0aもし、あなたが「#{@post.emotional_state_i18n}」なら聴いてみて！%0a%0aおすすめ ↓%0a&hashtags=yoursong", class: "btn-twitter", target: '_blank' do %>
+          <i class="fa-brands fa-twitter"></i>
+        <% end %>
       </div>
     </div>
   </div>
