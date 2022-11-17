@@ -14,6 +14,11 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
+  results:
+    new: 
+      title: '診断'
+    show: 
+      title: '診断結果'
   posts:
     index:
       title: '投稿一覧'
