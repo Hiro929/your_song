@@ -24,3 +24,14 @@
     background:  rgb(255, 255, 255);
     color: #000;
 }
+
+@media (max-width: 670px) {
+.login_card {
+    font-size: 14px;
+    width: auto;
+}
+
+.btn-user {
+    width: 291px !important;
+}
+}

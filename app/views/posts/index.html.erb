@@ -1,6 +1,9 @@
 <% content_for(:title, t('.title')) %>
 <div class="container mt-auto">
   <div class="index_search">
+    <div class="mb-4">
+      <h2><i class="fa-solid fa-headphones"></i> 投稿一覧</h2>
+    </div>
     <%= search_form_for @q, url: posts_path do |f| %>
       <%= f.select :emotional_state_eq, Post.emotional_states_i18n.invert.map{|key, value| [key, Post.emotional_states[value]]}, { include_blank: '選択してください'}, class: 'search_form' %>
       <button type="submit", class="btn-search">
@@ -8,7 +11,7 @@
       </button>
     <% end %>
   </div>
-  <div class="result2 mt-4">
+  <div class="result2 mt-3">
     <div class="row2 post_index mb-4">
       <% if @posts.present? %>
         <% @posts.each do |post| %>
@@ -23,7 +26,7 @@
               <div class="user_card">
                 <i class="fa-regular fa-user"></i>
                 <%= link_to post.user.name, post_path(post), class: 'link_show index_user' %>
-                <%= render 'crud_menus', post: post if current_user.own?(post) %>
+                <%= render 'crud_menus', post: post if logged_in? && current_user.own?(post) %>
               </div>
             </div>
           </div>

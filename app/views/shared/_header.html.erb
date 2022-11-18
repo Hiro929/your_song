@@ -1,11 +1,23 @@
-<header class="masthead sticky-top">
-  <nav class="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container-fluid">
     <%= link_to root_path, data: {"turbolinks" => false} do %>
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
-    <div class="header_right">
-      <%= link_to "ユーザー登録", new_user_path, class: "link", data: {"turbolinks" => false} %>
-      <%= link_to "ログイン", login_path, class: "link", data: {"turbolinks" => false} %>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Navber">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item text-center">
+          <%= link_to "投稿一覧", posts_path, class: "nav-link", data: {"turbolinks" => false} %>
+        </li>
+        <li class="nav-item text-center">
+        <%= link_to "ユーザー登録", new_user_path, class: "nav-link", data: {"turbolinks" => false} %>
+        </li>
+        <li class="nav-item text-center">
+        <%= link_to "ログイン", login_path, class: "nav-link", data: {"turbolinks" => false} %>
+        </li>
+      </ul>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>
