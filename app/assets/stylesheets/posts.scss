@@ -156,23 +156,23 @@
 }
 
 // スマホ対応
-@media (max-width: 1000px) {
-    body:before {
-        content: "";
-        background-image: url("background2.png");
-        background-position: center;
-    }
-}
-
 @media (max-width: 670px) {
-
-body:before {
-    content: "";
-    background-image: url("background2.png");
-    background-position: center;
-}
-
+// show.html.erb
 .post_container {
     width: auto;
 }
+
+.show_card {
+    font-size: 14px;
+}
+
+.show_card h4 {
+    font-size: 18px;
+}
+
+.show_emotional_state {
+    font-size: 18px;
+}
+
+// new.html.erb
 }

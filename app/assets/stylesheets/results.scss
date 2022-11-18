@@ -181,21 +181,7 @@ video, canvas {
 }
 
 // スマホ対応
-@media (max-width: 1000px) {
-    body:before {
-        content: "";
-        background-image: url("background2.png");
-        background-position: center;
-    }
-}
-
 @media (max-width: 670px) {
-
-body:before {
-    content: "";
-    background-image: url("background2.png");
-    background-position: center;
-}
 
 // result_new.html.erb
 .container {

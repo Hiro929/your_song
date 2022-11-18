@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-  before_action :require_login
   before_action :check_admin
   AuthenticationService.spotify_authenticate
 
@@ -21,13 +20,6 @@ class SongsController < ApplicationController
     else
       flash.now[:danger] = "すでに登録されているか、正常に登録されませんでした。"
       render :new
-    end
-  end
-
-  def search
-    if params[:track].present?
-      @tracks = RSpotify::Track.search(params[:track], market: 'JP', limit: 9)
-      @search_params = params[:track]
     end
   end
 

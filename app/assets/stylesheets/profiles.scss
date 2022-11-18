@@ -33,3 +33,17 @@ table {
     vertical-align: top;
     border-top: 1px solid #dee2e6;
 }
+
+@media (max-width: 670px) {
+.profile h1 {
+    font-size: 36px !important;
+}
+
+.btn-edit {
+    margin-top: auto;
+}
+
+.table th, .table td {
+    font-size: 16px;
+}
+}

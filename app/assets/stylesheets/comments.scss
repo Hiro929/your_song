@@ -62,3 +62,23 @@
     color: #fff;
     text-align: right;
 }
+
+@media (max-width: 670px) {
+// _form.html.erb
+.comment_container {
+    width: auto;
+}
+
+.comment_card {
+    font-size: 14px;
+}
+
+// comments.html.erb
+.comment_index_card h4 {
+    font-size: 18px;
+}
+
+.comment_index_card p {
+    font-size: 14px;
+}
+}
