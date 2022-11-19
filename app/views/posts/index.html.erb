@@ -5,10 +5,12 @@
       <h2><i class="fa-solid fa-headphones"></i> 投稿一覧</h2>
     </div>
     <%= search_form_for @q, url: posts_path do |f| %>
-      <%= f.select :emotional_state_eq, Post.emotional_states_i18n.invert.map{|key, value| [key, Post.emotional_states[value]]}, { include_blank: '選択してください'}, class: 'search_form' %>
-      <button type="submit", class="btn-search">
-        <i class="fa-solid fa-magnifying-glass"></i>検索
-      </button>
+      <div class="form-group">
+        <%= f.select :emotional_state_eq, Post.emotional_states_i18n.invert.map{|key, value| [key, Post.emotional_states[value]]}, { include_blank: 'すべて'}, class: 'search_form' %>
+        <button type="submit", class="btn-search">
+          <i class="fa-solid fa-magnifying-glass"></i>検索
+        </button>
+      </div>
     <% end %>
   </div>
   <div class="result2 mt-3">
