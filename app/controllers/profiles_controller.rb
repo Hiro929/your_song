@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
-  def show; end
+  def show
+    @posts = Post.where(user_id: current_user.id).includes(:user).order(created_at: :desc).page(params[:page]).per(9)
+  end
 
   def edit; end
 
