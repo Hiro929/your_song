@@ -8,6 +8,10 @@
     margin: auto;
 }
 
+.profile_title {
+    text-shadow: 2px 2px 2px #000;
+}
+
 .btn-edit {
     font-size: 14px;
     font-weight: bold;
@@ -28,10 +32,16 @@
 
 table {
     color: #fff !important;
+    text-shadow: 2px 2px 2px #000;
 }
 .table th {
     vertical-align: top;
     border-top: 1px solid #dee2e6;
+}
+
+.user_post {
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
 }
 
 @media (max-width: 670px) {
