@@ -1,4 +1,5 @@
 class ResultsController < ApplicationController
+  skip_before_action :require_login
 
   def show
     @result = Result.find(params[:id]) 
@@ -16,20 +17,10 @@ class ResultsController < ApplicationController
   end
 
   def analysis
-    credentials = Aws::Credentials.new(
-      ENV['AWS_ACCESS_KEY_ID'],
-      ENV['AWS_SECRET_ACCESS_KEY']
-    )
     photo = Base64.decode64(params[:image])
-    client = Aws::Rekognition::Client.new credentials: credentials
-    attrs = {
-      image: {
-        bytes: photo
-      },
-      attributes: ['ALL']
-    }
+
     # 分析結果の取得
-    response = client.detect_faces attrs
+    response = AwsRekognitionService.check_emotion(photo)
 
     if response.face_details == []
       @songs = Song.all

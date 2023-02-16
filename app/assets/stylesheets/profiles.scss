@@ -1,0 +1,59 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// profile_show.html.erb
+.profile {
+    display: flex;
+    margin: auto;
+}
+
+.profile_title {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.btn-edit {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    line-height: 3;
+    background-color: rgb(170, 170, 170);
+    padding: 0 12px;
+    margin-left: auto;
+}
+
+.btn-edit:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+table {
+    color: #fff !important;
+    text-shadow: 2px 2px 2px #000;
+}
+.table th {
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.user_post {
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+}
+
+@media (max-width: 670px) {
+.profile h1 {
+    font-size: 36px !important;
+}
+
+.btn-edit {
+    margin-top: auto;
+}
+
+.table th, .table td {
+    font-size: 16px;
+}
+}

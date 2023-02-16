@@ -1,0 +1,42 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mt-auto">
+  <div class="index_search">
+    <div class="mb-4">
+      <h2><i class="fa-solid fa-headphones"></i> 投稿一覧</h2>
+    </div>
+    <%= search_form_for @q, url: posts_path do |f| %>
+      <div class="form-group">
+        <%= f.select :emotional_state_eq, Post.emotional_states_i18n.invert.map{|key, value| [key, Post.emotional_states[value]]}, { include_blank: 'すべて'}, class: 'search_form' %>
+        <button type="submit", class="btn-search">
+          <i class="fa-solid fa-magnifying-glass"></i>検索
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <div class="result2 mt-3">
+    <div class="row2 post_index mb-4">
+      <% if @posts.present? %>
+        <% @posts.each do |post| %>
+          <div class="col-md-4">
+            <div class="index_card">
+              <iframe src="https://open.spotify.com/embed/track/<%= post.track_id %>?utm_source=generator" 
+                width="100%" height="250" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+              </iframe>
+              <div class=" index_emotional_state text-center">
+                <%= link_to post.emotional_state_i18n, post_path(post), class: 'link_show' %>
+              </div>
+              <div class="user_card">
+                <i class="fa-regular fa-user"></i>
+                <%= link_to post.user.name, post_path(post), class: 'link_show index_user' %>
+                <%= render 'crud_menus', post: post if logged_in? && current_user.own?(post) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>投稿がありません</p>
+      <% end %>
+    </div>
+    <%= paginate @posts %>
+  </div>
+</div>

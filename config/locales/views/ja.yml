@@ -1,0 +1,46 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    message:
+      updated: "%{item}を更新しました！"
+      not_updated: "%{item}を更新できませんでした！"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
+  users:
+    new:
+      title: 'ユーザー登録'
+  user_sessions:
+    new:
+      title: 'ログイン'
+  results:
+    new: 
+      title: '診断'
+    show: 
+      title: '診断結果'
+  posts:
+    index:
+      title: '投稿一覧'
+    show:
+      title: '投稿詳細'
+    new:
+      title: '投稿作成'
+    edit:
+      title: '投稿編集'
+    search:
+      title: '検索'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
+  

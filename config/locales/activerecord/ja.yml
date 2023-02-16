@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      post: '投稿'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: 'ユーザー名'
+      post:
+        emotional_state: 'この曲を聴くときはどんなとき？'
+        body: '上記のとき、なぜこの曲を聴くのか？'
+
+  enums:
+    result:
+      emotion:
+        HAPPY: "幸せ"
+        SAD: "悲しみ"
+        ANGRY: "怒り"
+        CONFUSED: "困惑"
+        DISGUSTED: "うんざり"
+        SURPRISED: "驚き"
+        CALM: "穏やか"
+        FEAR: "恐れ"
+        UNKNOWN: "無感情"
+    post:
+      emotional_state:
+        depressed: "落ち込んだ"
+        motivation: "テンション上げたい"
+        relax: "リラックスしたい"

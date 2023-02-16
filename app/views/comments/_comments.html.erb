@@ -1,0 +1,12 @@
+<div class="comment_container">
+  <div class="comment_index_card">
+    <h4>コメント一覧</h4>
+    <% if comments.present? %>
+      <table id="js-table-comment" class="table mt-3">
+        <%= render comments %>
+      </table>
+    <% else %>
+     <p>コメントがありません。</p>
+    <% end %>
+  </div>
+</div>

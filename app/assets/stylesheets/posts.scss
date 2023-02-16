@@ -1,0 +1,178 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// _crud_menus.html.erb
+.icon_link {
+    color: #fff;
+    margin: 0 5px;
+}
+
+.icon_link:hover {
+    color: rgb(170, 170, 170);
+}
+
+// index.html.erb
+.index_search {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.search_form {
+    padding: 2px 0px;
+}
+
+.index_card {
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 30px 30px 20px 30px;
+    margin: 20px;
+}
+
+.post_index {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.index_emotional_state {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.link_show {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link_show:hover {
+    color: rgb(170, 170, 170);
+}
+
+.user_card {
+    display: flex;
+    align-items: center;
+}
+
+.index_user {
+    margin: 0px 5px;
+}
+
+.index_link {
+    margin-left: auto;
+}
+
+// show.html.erb
+.show_card {
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 40px 40px 15px 40px;
+}
+
+.post_show {
+    margin-top: 20px;
+}
+
+.show_emotional_state {
+    font-size: 20px;
+    text-align: center;
+}
+
+.show_twitter {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.btn-twitter {
+    color: #00acee;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btn-twitter:hover {
+    color: #fff;
+}
+
+// search.html.erb
+.btn-search {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgba(170, 170, 170, 0.5);
+    padding: 3px 6px;
+}
+
+.btn-search:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+.result2 {
+    color: #fff;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-share {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    padding: 10px 40px;
+}
+
+.btn-share:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+// new.html.erb
+.post_container {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    margin: 50px 0px;
+    width: 680px;
+}
+
+.new_card {
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 40px 40px;
+}
+
+.post_form label {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.select_form {
+    width: 200px !important;
+    padding: 5px 0px;
+}
+
+// スマホ対応
+@media (max-width: 670px) {
+// show.html.erb
+.post_container {
+    width: auto;
+}
+
+.show_card {
+    font-size: 14px;
+}
+
+.show_card h4 {
+    font-size: 18px;
+}
+
+.show_emotional_state {
+    font-size: 18px;
+}
+
+// new.html.erb
+}

@@ -1,8 +1,6 @@
 class SongsController < ApplicationController
-  before_action :require_login
   before_action :check_admin
-  require 'rspotify'
-  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
+  AuthenticationService.spotify_authenticate
 
   def index
     @songs = Song.all.includes(:result).page(params[:page])
@@ -22,13 +20,6 @@ class SongsController < ApplicationController
     else
       flash.now[:danger] = "すでに登録されているか、正常に登録されませんでした。"
       render :new
-    end
-  end
-
-  def search
-    if params[:album].present?
-      @albums = RSpotify::Album.search(params[:album], market: 'JP')
-      @search_params = params[:album]
     end
   end
 

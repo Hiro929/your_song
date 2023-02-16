@@ -1,0 +1,37 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// users_new.html.erb
+.register_button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-user {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: rgb(255, 150, 0);
+    padding: 6px 12px;
+    width: 420px !important;
+}
+
+.btn-user:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+}
+
+@media (max-width: 670px) {
+.login_card {
+    font-size: 14px;
+    width: auto;
+}
+
+.btn-user {
+    width: 291px !important;
+}
+}
