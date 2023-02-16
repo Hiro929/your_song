@@ -83,3 +83,5 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 #metaタグ設定
 gem 'meta-tags'
+#検索
+gem 'ransack'

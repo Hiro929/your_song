@@ -1,8 +1,9 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <h2 class="service-title text-center mt-3">本アプリの使い方</h2>
   <div class="service">
-    <h2 class="service-title text-center">使い方</h2>
+    <h3 class="service-title">1. 診断機能による楽曲の提案</h3>
     <div class="service-content">
-      <p class="content-title">1. あなたの表情から感情を分析</p>
+      <p class="content-title">あなたの表情から感情を分析</p>
       <p class="content">
         あなたの表情を撮影してください。<br>
         すると、感情分析を行い結果が表示されます。<br>
@@ -11,15 +12,46 @@
       </p>
     </div>
     <div class="service-content">
-      <p class="content-title">2. 分析結果に応じたおすすめの曲を提案</p>
+      <p class="content-title">分析結果に応じたおすすめの曲を提案</p>
       <p class="content">
         あなたの感情に合った曲を提案します。<br>
         spotifyのアイコンをクリックするとspotifyの曲のページに遷移します。<br>
         歌詞をみながら曲を聴くことをおすすめします!
+        <br>
+        <p class="ps">※こちらの機能による楽曲提案は、SUPER BEAVER の楽曲のみになります。</p>
       </p>
     </div>
-    <div class="overview-btn">
-      <%= link_to "さっそくはじめる", new_result_path, class:"button" %>
+    <div class="service_link">
+      <%= "診断したい方は" %>
+      <%= link_to "こちら", new_result_path, class: "link" %>
+    </div>
+  </div>
+
+  <div class="service">
+    <h3 class="service-title">2. 投稿機能</h3>
+    <div class="service-content">
+      <p class="content-title">楽曲の検索</p>
+      <p class="content">
+        投稿するをクリックすると、検索ページに遷移します。<br>
+        そこで、投稿したい楽曲を1つ選びましょう。<br>
+        楽曲を選ぶと入力フォームに遷移します。<br>
+        どういうときにその曲を聴くのか。<br>
+        なぜ、そのときにこの曲を聴くのかを記入して投稿してください。
+      </p>
+    </div>
+    <div class="service-content">
+      <p class="content-title">コメント機能</p>
+      <p class="content">
+        ユーザーの投稿に対して、コメントをすることができます。
+      </p>
+    </div>
+    <div class="service_link">
+      <%= "ユーザー登録は" %>
+      <%= link_to "こちら", new_user_path, class: "link" %>
+    </div>
+    <div class="service_link">
+      <%= "登録がお済みの方は" %>
+      <%= link_to "こちら", login_path, class: "link" %>
     </div>
   </div>
 </div>

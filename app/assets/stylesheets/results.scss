@@ -1,3 +1,257 @@
 // Place all the styles related to the results controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// result_new.html.erb
+.camera {
+    text-align: center;
+}
+
+video, canvas {
+    border: inset 5px rgba(255, 255, 255, 0.9);
+}
+
+.analysis-btn {
+    margin-top: 20px;
+}
+
+.warning {
+    font-size: 12px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.emotion {
+    font-size: 22px;
+    font-weight: bold;
+    color:#fff;
+    text-shadow: 3px 3px 3px #000;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.analysis-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-2 {
+    display: flex;
+    justify-content: center;
+}
+
+/* ボタン */
+.button-2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    margin: 20px 30px;
+}
+
+.button-2:hover {
+    background:  rgba(255, 255, 255, 0.8);
+    color: #000;
+    border: 2px solid #000;
+}
+
+// result_show.html.erb
+.result_emotion, .result_song h4, .result_song p {
+    text-shadow: 3px 3px 3px #000;
+}
+
+.result_emotion {
+    border: outset 2px rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(127, 127, 127);
+    display: flex;
+    padding: 30px 70px;
+}
+
+.result_emotion img {
+    margin: auto;
+}
+
+.result_emotion p {
+    font-size: 18px;
+    margin: auto;
+}
+
+.result_image {
+    border: inset 2px rgb(255, 255, 255);
+}
+
+.result_song h4 {
+    padding: 0 10px;
+    margin: 40px 0 30px 0;
+}
+
+.result_song p {
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.result_song audio {
+    margin: auto;
+}
+
+.song_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.card {
+    background-color: rgb(50, 50, 50) !important;
+    padding: 50px 30px;
+}
+
+.spotify-2 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.btn-3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-4 {
+    display: flex;
+    justify-content: center;
+}
+
+/* ボタン */
+.button-3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    background-color: rgb(29, 161, 242);
+    max-width: 80%;
+    padding: 15px 13px 15px 17px;
+    margin: 20px 50px;
+}
+
+.button-3:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+    border: 2px solid #000;
+}
+
+.button-4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+    max-width: 80%;
+    padding: 15px 16px;
+    margin: 10px 50px;
+}
+
+.button-4:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+    border: 2px solid #000;
+}
+
+.button-5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+    max-width: 80%;
+    padding: 15px 16px;
+    margin: 10px 50px;
+}
+
+.button-5:hover {
+    background:  rgb(255, 255, 255);
+    color: #000;
+    border: 2px solid #000;
+}
+
+// スマホ対応
+@media (max-width: 670px) {
+
+// result_new.html.erb
+.container {
+    margin: 20px 0;
+}
+
+.emotion {
+    font-size: 18px;
+}
+
+.button-2 {
+    font-size: 12px;
+    padding: 15px 20px;
+    margin: 20px 30px;
+}
+
+// result_show.html.erb
+.result_song h4 {
+    font-size: 16px;
+    text-align: center;
+}
+
+.result_emotion {
+    padding: 30px 50px;
+}
+
+.result_emotion p {
+    font-size: 14px;
+}
+
+.card {
+    padding: 30px;
+}
+
+.result_song h4 {
+    padding: 0 0;
+    margin: 40px 0 30px 0;
+}
+
+.result_song p {
+    font-size: 14px;
+}
+
+.result_emotion img {
+    width: 70px;
+    height: 70px;
+}
+
+.result_song img {
+    width: 150px;
+    height: 150px;
+}
+
+audio {
+    width: 280px !important;
+}
+
+.button-3 {
+    font-size: 10px;
+    padding: 15px 17px 15px 21px;
+    margin: 20px 30px;
+}
+
+.button-4 {
+    font-size: 10px;
+    margin: 10px 30px
+}
+
+.button-5 {
+    font-size: 10px;
+    margin: 10px 30px
+}
+}

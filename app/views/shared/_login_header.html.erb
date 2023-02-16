@@ -1,13 +1,31 @@
-<header class="masthead sticky-top">
-  <nav class="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container-fluid">
     <%= link_to root_path, data: {"turbolinks" => false} do %>
       <%= image_tag 'logo.png', class:'logo' %>
     <% end %>
-    <div class="header_right">
-      <%= link_to "登録曲一覧", songs_path, class: "link" %>
-      <%= link_to "楽曲登録", new_song_path, class: "link" %>
-      <%= link_to "全曲検索", search_songs_path, class: "link" %>
-      <%= link_to "ログアウト", admin_logout_path, class: "link", method: :delete %>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Navber">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item text-center">
+          <%= link_to "投稿一覧", posts_path, class: "nav-link", data: {"turbolinks" => false} %>
+        </li>
+        <li class="nav-item text-center">
+          <%= link_to "投稿する", search_posts_path, class: "nav-link", data: {"turbolinks" => false} %>
+        </li>
+        <li class="nav-item m-auto text-center">
+          <button class="btn-dropdown rounded-circle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-regular fa-user"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><font class="user_name"><%= current_user.name %></font></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "プロフィール", profile_path, class: "dropdown-item", data: {"turbolinks" => false} %></li>
+            <li><%= link_to "ログアウト", logout_path, class: "dropdown-item", method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>

@@ -5,23 +5,18 @@
 // admin_user_sessions_new.html.erb
 .login_card {
     color: #fff;
-    background-color:  rgb(80, 80, 80);
+    border: outset 2px rgba(255, 255, 255, 0.9);
+    background-color: rgb(50, 50, 50);
     padding: 40px 40px;
+    margin: 30px 0;
+    width: 500px;
 }
 
 .login_form label {
     margin-top: 20px;
 }
 
-.email, .password {
-    width: 300px !important;
-}
-
 .login_button {
     margin-top: 30px;
     text-align: center;
-}
-
-.btn {
-    width: 300px !important;
 }

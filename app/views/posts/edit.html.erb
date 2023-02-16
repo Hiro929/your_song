@@ -1,0 +1,12 @@
+<% content_for(:title, t('.title')) %>
+<div class="cover-container d-flex mx-auto flex-column">
+  <div class="post_container">
+    <div class="new_card">
+      <h3 class="text-center mb-5"><%= t('.title') %></h3>
+      <iframe src="https://open.spotify.com/embed/track/<%= @post.track_id %>?utm_source=generator" 
+        width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+      </iframe>
+      <%= render 'form', { post: @post, track_id: @post.track_id } %>
+    </div>
+  </div>
+</div>
