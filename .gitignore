@@ -38,3 +38,4 @@ yarn-debug.log*
 AWSCLIV2.pkg
 .DS_Store
 .env
+.vscode
