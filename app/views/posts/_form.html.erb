@@ -1,5 +1,6 @@
 <div class="post_form mt-4">
   <%= form_with model: post, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group">
       <%= f.hidden_field :track_id, value: track_id %>
     </div>
